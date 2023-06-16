@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Panel from 'react-bootstrap/lib/Panel'
 import Button from 'react-bootstrap/lib/Button'
 import CustomerDetails from './CustomerDetails'
@@ -21,7 +21,7 @@ export default class Customers extends Component {
   //Function to get the Customer Data from json
   getCustomerData() {
     axios.get('http://localhost:3001/customerList').then(response => {
-      this.setState({customerList: response})
+      this.setState({ customerList: response })
     })
   };
 
@@ -39,7 +39,7 @@ export default class Customers extends Component {
             <Panel.Body>
               <p>{customer.email}</p>
               <p>{customer.phone}</p>
-              <Button bsStyle="info" onClick={() => this.setState({selectedCustomer: customer.id})} data-test={customer.id}>
+              <Button bsStyle="info" onClick={() => this.setState({ selectedCustomer: customer.id })} data-test={customer.id}>
 
                 Click to View Details
 
@@ -50,7 +50,7 @@ export default class Customers extends Component {
         }
       </div>
       <div className="col-md-6">
-        <CustomerDetails val={this.state.selectedCustomer}/>
+        <CustomerDetails val={this.state.selectedCustomer} />
       </div>
     </div>)
   }

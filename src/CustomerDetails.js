@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Panel from 'react-bootstrap/lib/Panel'
 import axios from 'axios'
 
@@ -27,7 +27,7 @@ export default class CustomerDetails extends Component {
   //Function to Load the customerdetails data from json.
   getCustomerDetails(id) {
     axios.get('http://localhost:3001/customers/' + id).then(response => {
-      this.setState({customerDetails: response})
+      this.setState({ customerDetails: response })
     })
   };
 
